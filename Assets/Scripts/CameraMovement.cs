@@ -30,20 +30,29 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementCode();
+        CameraMovementCode();
     }
 
     /// <summary>
     /// The meat and potatoes, this moves the camera
     /// </summary>
-    void MovementCode()
+    void CameraMovementCode()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) - player.transform.position; // Gets the mouse position in the world minus the player position to account for moving around
-        Debug.Log(mousePosition);
         //mousePosition 
 
         cameraDisplace = new Vector2(mousePosition.x, mousePosition.y);
-        cameraDisplace /= Vector2.Distance(cameraDisplace, Vector2.zero); // DO THIS NEXT TIME, MAKE IT LIMIT THE RANGE OF THE MAX OFFSET FOR THE CAMERA TO MAKE THE OUTER BOUNDS BE A CIRCLE INSTEAD OF A SQUARE
+        float vectorMagnitude = mousePosition.magnitude;
+        
+
+        if (vectorMagnitude > maxDisplaceDistance)
+        {
+            cameraDisplace = new Vector2((cameraDisplace.x / vectorMagnitude) * maxDisplaceDistance, (cameraDisplace.y / vectorMagnitude) * maxDisplaceDistance);
+        }
+         
+        
+        
+        // DO THIS NEXT TIME, MAKE IT LIMIT THE RANGE OF THE MAX OFFSET FOR THE CAMERA TO MAKE THE OUTER BOUNDS BE A CIRCLE INSTEAD OF A SQUARE
 
         transform.position = player.transform.position + (cameraDisplace / 15) + Vector3.back * 15;
     }
