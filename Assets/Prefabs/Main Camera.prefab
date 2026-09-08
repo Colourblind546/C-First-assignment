@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d997e40e242749920645360a9029c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
-  maxDisplaceDistance: 4
+  maxDisplaceDistance: 10
   mouseAndRStick:
     m_Name: Mouse And R Stick
     m_Type: 0
