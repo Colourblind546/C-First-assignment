@@ -57,11 +57,11 @@ public class Item : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(transform.position, totalRange, targetLayer))
             {
-                ActivateEffect(stacks);
+                ActivateEffect();
             }
         }
     }
-    virtual public void ActivateEffect(int stacks)
+    virtual public void ActivateEffect()
     {
         totalCooldown = cooldown -= extraCooldown * stacks;
         totalDuration = duration += extraDuration * stacks;

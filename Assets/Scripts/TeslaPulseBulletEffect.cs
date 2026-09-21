@@ -26,8 +26,7 @@ public class TeslaPulseBulletEffect : MonoBehaviour
         }
     }
 
-    [ContextMenu("Appear")]
-    public void AppearTeslaPulseEffect(/*Vector2 startPosition, Vector2 endPosition*/)
+    public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition)
     {
         line.SetPosition(0, Vector2.up);
         line.SetPosition(1, Vector2.down);
