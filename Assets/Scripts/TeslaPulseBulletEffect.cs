@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TeslaPulseBulletEffect : MonoBehaviour
+public class TeslaPulseBulletEffect : Bullet
 {
 
     [SerializeField] float lifeTime;
@@ -26,7 +26,7 @@ public class TeslaPulseBulletEffect : MonoBehaviour
         }
     }
 
-    public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition)
+    public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition) // SET UP OVERRIDES FOR BULLETEFFECT
     {
         line.SetPosition(0, Vector2.up);
         line.SetPosition(1, Vector2.down);

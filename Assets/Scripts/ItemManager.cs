@@ -43,7 +43,6 @@ public class ItemManager : MonoBehaviour
         {
             item.Timer();
             item.CheckTimerAndEffect();
-            item.ActivateEffect();
         }
     }
 

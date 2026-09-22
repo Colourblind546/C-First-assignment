@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -73,4 +75,33 @@ public class Item : MonoBehaviour
             totalCooldown = 0.01f;
         }
     }
+
+    internal List<GameObject> bullet = new List<GameObject>();
+    [SerializeField] internal GameObject bulletObj;
+    internal void PoolBullets(int maxBulletCount)
+    {
+        while (bullet.Count < maxBulletCount)
+        {
+            GameObject currentBullet = Instantiate(bulletObj);
+            currentBullet.SetActive(false);
+            bullet.Add(currentBullet);
+        }
+        while (bullet.Count > maxBulletCount)
+        {
+            bullet.RemoveAt(0);
+        }
+    }
+    internal int bulletToUse;
+    internal GameObject ActivatePooledBullets()
+    {
+        GameObject activatedBullet = bullet[bulletToUse];
+        activatedBullet.SetActive(true);
+        bulletToUse++;
+        if (bulletToUse > bullet.Count - 1)
+        {
+            bulletToUse = 0;
+        }
+        return activatedBullet;
+    }
+    
 }

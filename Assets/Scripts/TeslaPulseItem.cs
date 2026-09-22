@@ -5,7 +5,7 @@ using UnityEngine;
 public class TeslaPulseItem : Item
 {
 
-    List<GameObject> teslaBullet = new List<GameObject>();
+    List<TeslaPulseBulletEffect> teslaBulletPool = new List<TeslaPulseBulletEffect>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +32,9 @@ public class TeslaPulseItem : Item
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            
+            GameObject currentBullet = ActivatePooledBullets();
+            Bullet currentBulletScript = currentBullet.GetComponent<Bullet>();
+            currentBulletScript.BulletEffect(enemies[i]); // NEXT UP: Add values for startposition and endposition
         }
         
     }
