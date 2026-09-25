@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class TeslaPulseItem : Item
 {
-
+    public static TeslaPulseItem Instance;
     List<TeslaPulseBulletEffect> teslaBulletPool = new List<TeslaPulseBulletEffect>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

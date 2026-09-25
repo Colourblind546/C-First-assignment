@@ -26,6 +26,12 @@ public class TeslaPulseBulletEffect : Bullet
         }
     }
 
+    internal override void BulletEffect(GameObject target)
+    {
+        AppearTeslaPulseEffect(TeslaPulseItem.Instance.transform.position, target.transform.position);
+        DoDamage(target);
+    }
+
     public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition) // SET UP OVERRIDES FOR BULLETEFFECT
     {
         line.SetPosition(0, Vector2.up);

@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField] internal LayerMask targetLayer;
+    [SerializeField] internal int damage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,13 +22,8 @@ public class Bullet : MonoBehaviour
 
     }
 
-    internal virtual void BulletEffect(Vector2 startPosition,  Vector2 endPosition)
+    internal void DoDamage(GameObject target)
     {
-
-    }
-
-    internal virtual void BulletEffect(GameObject target, Vector2 startPosition, Vector2 endPosition)
-    {
-
+        target.GetComponent<Enemy>().TakeDamage(damage);
     }
 }

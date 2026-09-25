@@ -12,8 +12,11 @@ public class ItemManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
-        if (Instance != gameObject.GetComponent<ItemManager>())
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
         {
             Destroy(gameObject);
         }
@@ -32,7 +35,7 @@ public class ItemManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current.spaceKey.isPressed)
         {
             Debug.Log("Space was pressed");
             Item testItem = TestObject.GetComponent<Item>();
@@ -41,6 +44,7 @@ public class ItemManager : MonoBehaviour
         
         foreach (Item item in items)
         {
+            item.SetTotalStats();
             item.Timer();
             item.CheckTimerAndEffect();
         }
@@ -54,6 +58,10 @@ public class ItemManager : MonoBehaviour
         AddItem(testItem);
     }
 
+    /// <summary>
+    /// Adds item to the Item list and increments it if it isn't in there already, in which case it only increments it 
+    /// </summary>
+    /// <param name="item"></param>
     public void AddItem(Item item)
     {
         if (!items.Contains(item))

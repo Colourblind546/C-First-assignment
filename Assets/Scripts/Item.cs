@@ -61,19 +61,24 @@ public class Item : MonoBehaviour
             {
                 ActivateEffect();
             }
+            time = 0;
         }
     }
-    virtual public void ActivateEffect()
+    internal void SetTotalStats()
     {
-        totalCooldown = cooldown -= extraCooldown * stacks;
-        totalDuration = duration += extraDuration * stacks;
-        totalRange = range += extraRange * stacks;
-        totalDamage = damage += extraDamage * stacks;
+        totalCooldown = cooldown - extraCooldown * stacks;
+        totalDuration = duration + extraDuration * stacks;
+        totalRange = range + extraRange * stacks;
+        totalDamage = damage + extraDamage * stacks;
 
         if (totalCooldown <= 0)
         {
             totalCooldown = 0.01f;
         }
+    }
+    virtual public void ActivateEffect()
+    {
+        
     }
 
     internal List<GameObject> bullet = new List<GameObject>();
