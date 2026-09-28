@@ -61,3 +61,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   stacks: 0
+  bulletObj: {fileID: 7614354655945314578, guid: 4cb1fb888e333444f860bd8d62a47c02, type: 3}

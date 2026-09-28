@@ -35,13 +35,6 @@ public class ItemManager : MonoBehaviour
     void Update()
     {
 
-        if (Keyboard.current.spaceKey.isPressed)
-        {
-            Debug.Log("Space was pressed");
-            Item testItem = TestObject.GetComponent<Item>();
-            AddItem(testItem);
-        }
-        
         foreach (Item item in items)
         {
             item.SetTotalStats();
@@ -53,7 +46,6 @@ public class ItemManager : MonoBehaviour
     [ContextMenu("ITEM TESTING")]
     void TestyTesty()
     {
-        Debug.Log("Space was pressed");
         Item testItem = TestObject.GetComponent<Item>();
         AddItem(testItem);
     }

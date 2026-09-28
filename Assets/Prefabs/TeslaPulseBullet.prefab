@@ -86,7 +86,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 2.0183308
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TeslaPulseBulletEffect
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   damage: 55
   lifeTime: 0.25
   material: {fileID: 2100000, guid: b8d8e3cbbe0a9d4429d1172ba0abda26, type: 2}

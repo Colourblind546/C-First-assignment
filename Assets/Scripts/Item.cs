@@ -81,7 +81,7 @@ public class Item : MonoBehaviour
         
     }
 
-    internal List<GameObject> bullet = new List<GameObject>();
+    [SerializeField] internal List<GameObject> bullet = new List<GameObject>();
     [SerializeField] internal GameObject bulletObj;
     internal void PoolBullets(int maxBulletCount)
     {
@@ -102,7 +102,7 @@ public class Item : MonoBehaviour
         GameObject activatedBullet = bullet[bulletToUse];
         activatedBullet.SetActive(true);
         bulletToUse++;
-        if (bulletToUse > bullet.Count - 1)
+        if (bulletToUse == bullet.Count)
         {
             bulletToUse = 0;
         }

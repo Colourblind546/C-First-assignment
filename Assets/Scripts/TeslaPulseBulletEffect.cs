@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class TeslaPulseBulletEffect : Bullet
@@ -17,25 +18,25 @@ public class TeslaPulseBulletEffect : Bullet
     // Update is called once per frame
     void Update()
     {
-        if (material.color.a > 0)
-        {
-            fadeAmount -= Time.deltaTime / lifeTime;
-            Debug.Log($"Fade amounte: {fadeAmount}");
-            Color color = new Color(1, 1, 1, fadeAmount);
-            material.SetColor("_BaseColor", color);
-        }
     }
 
     internal override void BulletEffect(GameObject target)
     {
+        Debug.Log("Does zis work?");
         AppearTeslaPulseEffect(TeslaPulseItem.Instance.transform.position, target.transform.position);
         DoDamage(target);
+        
     }
 
     public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition) // SET UP OVERRIDES FOR BULLETEFFECT
     {
-        line.SetPosition(0, Vector2.up);
-        line.SetPosition(1, Vector2.down);
-        material.SetColor("_BaseColor", Color.white);
+        line.SetPosition(0, startPosition);
+        line.SetPosition(1, endPosition);
+        line.enabled = true;
+        Invoke(nameof(DisappearTeslaPulseEffect), 0.1f);
+    }
+    internal void DisappearTeslaPulseEffect()
+    {
+        line.enabled = false;
     }
 }

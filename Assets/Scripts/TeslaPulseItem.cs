@@ -27,7 +27,7 @@ public class TeslaPulseItem : Item
     // Update is called once per frame
     void Update()
     {
-        
+        PoolBullets(stacks);
         
 
     }
@@ -35,11 +35,15 @@ public class TeslaPulseItem : Item
     // Torment pulse RAAAAAHHHHH. Damages a number of enemies within range, scaling max targets and range with number of stacks
     public override void ActivateEffect() 
     {
-        base.ActivateEffect();
         List<GameObject> enemies = new List<GameObject>();
         foreach (Collider2D target in Physics2D.OverlapCircleAll(transform.position, totalRange, targetLayer))
         {
             enemies.Add(target.gameObject);
+        }
+
+        if (enemies.Count > stacks)
+        {
+            enemies.RemoveRange(stacks, enemies.Count - stacks);
         }
 
         for (int i = 0; i < enemies.Count; i++)
