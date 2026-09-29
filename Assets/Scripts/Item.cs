@@ -60,8 +60,8 @@ public class Item : MonoBehaviour
             if (Physics2D.OverlapCircle(transform.position, totalRange, targetLayer))
             {
                 ActivateEffect();
+                time = 0;
             }
-            time = 0;
         }
     }
     internal void SetTotalStats()

@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] int health;
+    [SerializeField] GameObject experience;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
+        Instantiate(experience, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 

@@ -46,11 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TeslaPulseItem
   cooldown: 1
   duration: 0
-  range: 5
+  range: 2.5
   damage: 15
   extraCooldown: 0
   extraDuration: 0
-  extraRange: 1
+  extraRange: 0.75
   extraDamage: 0
   totalCooldown: 0
   totalDuration: 0
@@ -61,4 +61,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   stacks: 0
+  bullet: []
   bulletObj: {fileID: 7614354655945314578, guid: 4cb1fb888e333444f860bd8d62a47c02, type: 3}

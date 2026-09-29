@@ -1,0 +1,62 @@
+using UnityEngine;
+
+public class ExpManager : MonoBehaviour
+{
+    [Header("Experience Modifiers")]
+    [SerializeField] int currentExp;
+    [SerializeField] int expToLevel;
+    [SerializeField] float expIncreaseCoefficient;
+
+
+    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        GetNearbyExp();
+    }
+
+    [Header("Experience Collection Stuff")]
+    [SerializeField] float expFindRadius;
+    [SerializeField] float expPickupRadius;
+    [SerializeField] float expPullSpeed;
+    [SerializeField] LayerMask expLayer;
+    void GetNearbyExp()
+    {
+        Collider2D[] expColliders = Physics2D.OverlapCircleAll(transform.position, expFindRadius, expLayer);
+        foreach (Collider2D collider in expColliders)
+        {
+            Experience exp = collider.gameObject.GetComponent<Experience>();
+            if (Vector2.Distance(transform.position, collider.gameObject.transform.position) < expPickupRadius)
+            {
+                currentExp += exp.GetExp();
+                Destroy(collider.gameObject);
+                continue;
+            }
+
+            collider.gameObject.transform.position -= (collider.transform.position - transform.position).normalized * expPullSpeed * Time.deltaTime;
+
+        }
+        if (expToLevel < currentExp)
+        {
+            LevelUp();
+        }
+    }
+
+    void LevelUp()
+    {
+        // Give player item options
+
+        // Prepares for next level up
+        float expToLevelFloat = expToLevel;
+        expToLevel = Mathf.RoundToInt(expToLevelFloat * expIncreaseCoefficient/* * GameManager.levelDifficultyModifier*/);
+        currentExp = 0;
+    }
+
+
+}
