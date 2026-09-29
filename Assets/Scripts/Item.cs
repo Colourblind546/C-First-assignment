@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Item Instance;
+
+    [SerializeField] int cardType;
+
+    [SerializeField] internal string description;
+    [SerializeField] internal string ScalingInformation;
+
     [Header("Base stats")]
     [SerializeField] internal float cooldown;
     [SerializeField] internal float duration;

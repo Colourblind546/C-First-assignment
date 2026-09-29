@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TeslaPulseItem : Item
 {
-    public static TeslaPulseItem Instance;
+    //public static TeslaPulseItem Instance;
+
+    new public static Item Instance;
+
     List<TeslaPulseBulletEffect> teslaBulletPool = new List<TeslaPulseBulletEffect>();
 
     private void Awake()
