@@ -8,6 +8,8 @@ public class CardStats : MonoBehaviour
     [SerializeField] TMP_Text description;
     [SerializeField] TMP_Text stats;
     [SerializeField] GameObject card;
+    [SerializeField] SpriteRenderer icon;
+    public Item cardItem;
     CardChanger cardChanger;
 
     private void Awake()
@@ -27,13 +29,15 @@ public class CardStats : MonoBehaviour
         
     }
 
-    void CardSetter(Item item)
+    public void CardStatSetter(Item item, int cardType)
     {
 
         description.text = item.Instance.description;
-        stats.text = item.Instance.ScalingInformation;
+        stats.text = item.Instance.scalingInformation;
+        icon.sprite = item.icon;
+        cardItem = item;
 
-
+        card.GetComponent<CardChanger>().SetCard(cardType);
 
     }
 }

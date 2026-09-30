@@ -42,7 +42,7 @@ public class ExpManager : MonoBehaviour
             collider.gameObject.transform.position -= (collider.transform.position - transform.position).normalized * expPullSpeed * Time.deltaTime;
 
         }
-        if (expToLevel < currentExp)
+        if (expToLevel <= currentExp)
         {
             LevelUp();
         }

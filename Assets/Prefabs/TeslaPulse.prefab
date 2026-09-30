@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913b01aa4b0b507488aa12d19e9cfa91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeslaPulseItem
+  Instance: {fileID: 0}
+  cardType: 0
   description: Damages nearby enemies with electrical pulses
-  ScalingInformation: Range and Amount
+  scalingInformation: 
+  icon: {fileID: -6863214963628513622, guid: 05aa7c7c947387c46b468b6fac5019fb, type: 3}
   cooldown: 1
   duration: 0
   range: 2.5

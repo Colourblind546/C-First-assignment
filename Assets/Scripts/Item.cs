@@ -6,10 +6,12 @@ public class Item : MonoBehaviour
 {
     public Item Instance;
 
+    [Header("Card Stuff")]
     [SerializeField] int cardType;
 
     [SerializeField] internal string description;
-    [SerializeField] internal string ScalingInformation;
+    [SerializeField] internal string scalingInformation;
+    [SerializeField] internal Sprite icon;
 
     [Header("Base stats")]
     [SerializeField] internal float cooldown;
