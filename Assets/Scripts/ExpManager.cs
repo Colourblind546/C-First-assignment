@@ -6,6 +6,7 @@ public class ExpManager : MonoBehaviour
     [SerializeField] int currentExp;
     [SerializeField] int expToLevel;
     [SerializeField] float expIncreaseCoefficient;
+    [SerializeField] public int unspentLevels = 0;
 
 
     
@@ -50,7 +51,15 @@ public class ExpManager : MonoBehaviour
 
     void LevelUp()
     {
+        RandomiseAndAppearCards cardControllerObj = Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>();
+        if (unspentLevels == 0)
+        {
+            cardControllerObj.SetAllCards();
+        }
+        unspentLevels++;
         // Give player item options
+
+
 
         // Prepares for next level up
         float expToLevelFloat = expToLevel;

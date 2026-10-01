@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
     public Item Instance;
 
     [Header("Card Stuff")]
-    [SerializeField] int cardType;
+    [SerializeField] public int cardType;
 
     [SerializeField] internal string description;
     [SerializeField] internal string scalingInformation;

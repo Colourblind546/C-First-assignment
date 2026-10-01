@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    [ContextMenu("Kill")]
     public virtual void Die()
     {
         Instantiate(experience, transform.position, Quaternion.identity);

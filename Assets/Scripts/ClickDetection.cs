@@ -28,6 +28,11 @@ public class ClickDetection : MonoBehaviour
             {
                 GameObject clickTarget = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), 0.01f, buttonLayer).gameObject;
                 ItemManager.Instance.AddItem(gameObject.GetComponent<CardStats>().cardItem);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ExpManager>().unspentLevels--;
+                if (GameObject.FindGameObjectWithTag("Player").GetComponent<ExpManager>().unspentLevels > 0)
+                {
+                    Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>().SetAllCards();
+                }
             }
         }
         else

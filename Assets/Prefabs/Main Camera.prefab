@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5944851995201957155}
   - component: {fileID: 9005668072495579968}
   - component: {fileID: 767362471734865304}
+  - component: {fileID: 6066273002494362817}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -195,6 +196,22 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &6066273002494362817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078913175367786007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21346995e5634a54bab72487062e6749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomiseAndAppearCards
+  cards:
+  - {fileID: 6277069717391941861}
+  - {fileID: 7749278860987210405}
+  - {fileID: 5120071710228294110}
 --- !u!1001 &618761421616468477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -261,6 +278,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7627968689287158699, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
   m_PrefabInstance: {fileID: 618761421616468477}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7749278860987210405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7141776816938437464, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
+  m_PrefabInstance: {fileID: 618761421616468477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8612ba1c08475474584a2bea26a4d644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStats
 --- !u!1001 &2599305114121626246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,6 +350,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
+--- !u!114 &5120071710228294110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7141776816938437464, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
+  m_PrefabInstance: {fileID: 2599305114121626246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8612ba1c08475474584a2bea26a4d644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStats
 --- !u!4 &5605129002677188909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7627968689287158699, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
@@ -388,6 +427,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
+--- !u!114 &6277069717391941861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7141776816938437464, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}
+  m_PrefabInstance: {fileID: 3747014181107166141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8612ba1c08475474584a2bea26a4d644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStats
 --- !u!4 &6763259369250172950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7627968689287158699, guid: fc99db58a3154f84f93e5e19a4cbe520, type: 3}

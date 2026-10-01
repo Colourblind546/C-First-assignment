@@ -211,7 +211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Scales Range and Count
+  m_text: Nope
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ff7c64b81ebd074e8e55ef5a6174813, type: 2}
   m_sharedMaterial: {fileID: 1380978407668516959, guid: 0ff7c64b81ebd074e8e55ef5a6174813, type: 2}
@@ -338,9 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardStats
   description: {fileID: 252834091956012050}
-  stats: {fileID: 0}
+  stats: {fileID: 6584566863042549921}
   card: {fileID: 87393649853892657}
-  icon: {fileID: 0}
+  icon: {fileID: 333173800182279765}
   cardItem: {fileID: 0}
 --- !u!114 &2101121683895877226
 MonoBehaviour:
@@ -357,7 +357,6 @@ MonoBehaviour:
   buttonLayer:
     serializedVersion: 2
     m_Bits: 256
-  currentCamera: {fileID: 0}
 --- !u!61 &7892155742660662554
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -663,7 +662,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6863214963628513622, guid: 05aa7c7c947387c46b468b6fac5019fb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -671,7 +670,7 @@ SpriteRenderer:
   m_Size: {x: 0.6666667, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5408888618511098066
@@ -709,7 +708,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.5, y: 0.2}
-  m_SizeDelta: {x: 0.8, y: 0.35}
+  m_SizeDelta: {x: 1, y: 0.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2934698633906189427
 MeshRenderer:
@@ -779,7 +778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shocks nearby enemies
+  m_text: Nope
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ff7c64b81ebd074e8e55ef5a6174813, type: 2}
   m_sharedMaterial: {fileID: 1380978407668516959, guid: 0ff7c64b81ebd074e8e55ef5a6174813, type: 2}

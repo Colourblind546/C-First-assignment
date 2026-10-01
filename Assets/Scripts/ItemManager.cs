@@ -10,6 +10,8 @@ public class ItemManager : MonoBehaviour
 
     [SerializeField] List<Item> items = new List<Item>();
 
+    [SerializeField] public List<Item> allItems = new List<Item>();
+
     void Awake()
     {
         if (Instance == null)
@@ -26,7 +28,12 @@ public class ItemManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        allItems.Clear();
+        GameObject[] allItemsInScene = GameObject.FindGameObjectsWithTag("Item");
+        foreach (GameObject itemObj in allItemsInScene)
+        {
+            allItems.Add(itemObj.GetComponent<Item>());
+        }
     }
 
     public GameObject TestObject;
@@ -34,13 +41,14 @@ public class ItemManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         foreach (Item item in items)
         {
             item.SetTotalStats();
             item.Timer();
             item.CheckTimerAndEffect();
         }
+        
+        
     }
 
     [ContextMenu("ITEM TESTING")]

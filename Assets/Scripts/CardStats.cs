@@ -31,9 +31,8 @@ public class CardStats : MonoBehaviour
 
     public void CardStatSetter(Item item, int cardType)
     {
-
-        description.text = item.Instance.description;
-        stats.text = item.Instance.scalingInformation;
+        description.text = item.description;
+        stats.text = item.scalingInformation;
         icon.sprite = item.icon;
         cardItem = item;
 

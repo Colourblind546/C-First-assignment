@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8753371541237597818}
   m_Layer: 0
   m_Name: TeslaPulse
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   Instance: {fileID: 0}
   cardType: 0
   description: Damages nearby enemies with electrical pulses
-  scalingInformation: 
+  scalingInformation: Scales Range and Count
   icon: {fileID: -6863214963628513622, guid: 05aa7c7c947387c46b468b6fac5019fb, type: 3}
   cooldown: 1
   duration: 0
