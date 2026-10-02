@@ -13,7 +13,8 @@ public class ExpManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        RandomiseAndAppearCards cardControllerObj = Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>();
+        cardControllerObj.SetAllCards();
     }
 
     // Update is called once per frame
@@ -49,6 +50,7 @@ public class ExpManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("Level Up")]
     void LevelUp()
     {
         RandomiseAndAppearCards cardControllerObj = Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>();

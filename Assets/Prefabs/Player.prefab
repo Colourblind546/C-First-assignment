@@ -147,6 +147,7 @@ MonoBehaviour:
   currentExp: 0
   expToLevel: 100
   expIncreaseCoefficient: 1.05
+  unspentLevels: 3
   expFindRadius: 2.5
   expPickupRadius: 0.5
   expPullSpeed: 25

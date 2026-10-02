@@ -33,7 +33,13 @@ public class TeslaPulseBulletEffect : Bullet
         line.SetPosition(0, startPosition);
         line.SetPosition(1, endPosition);
         line.enabled = true;
-        Invoke(nameof(DisappearTeslaPulseEffect), 0.1f);
+        float visualDuration = TeslaPulseItem.Instance.totalCooldown * 0.15f;
+        if (visualDuration < 0.1)
+        {
+            visualDuration = 0.1f;
+        }
+        CancelInvoke(nameof(DisappearTeslaPulseEffect));
+        Invoke(nameof(DisappearTeslaPulseEffect), visualDuration);
     }
     internal void DisappearTeslaPulseEffect()
     {

@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     [Header("Card Stuff")]
     [SerializeField] public int cardType;
 
+    [SerializeField] internal string itemName;
     [SerializeField] internal string description;
     [SerializeField] internal string scalingInformation;
     [SerializeField] internal Sprite icon;

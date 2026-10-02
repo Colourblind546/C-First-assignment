@@ -1,9 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class RandomiseAndAppearCards : MonoBehaviour
 {
 
     [SerializeField] CardStats[] cards;
+    [SerializeField] GameObject cardsParent;
+
+    [SerializeField] TMP_Text levelDisplay;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,8 +19,11 @@ public class RandomiseAndAppearCards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int unspentLevels = GameObject.FindGameObjectWithTag("Player").GetComponent<ExpManager>().unspentLevels;
 
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<ExpManager>().unspentLevels > 0)
+        levelDisplay.text = $"Levels: {unspentLevels}";
+
+        if (unspentLevels > 0)
         {
             ShowCards();
         }
@@ -28,11 +35,27 @@ public class RandomiseAndAppearCards : MonoBehaviour
 
     void ShowCards() //move cards out
     {
-        
+        float moveOutDistance = -12;
+        if (cardsParent.transform.localPosition.x < moveOutDistance)
+        {
+            cardsParent.transform.position += Vector3.right * Time.deltaTime * 35;
+            if (cardsParent.transform.localPosition.x > moveOutDistance)
+            {
+                cardsParent.transform.localPosition = new Vector3(moveOutDistance, -1, 15);
+            }
+        }
     }
     void HideCards() //move cards in
     {
-
+        float moveInDistance = -25;
+        if (cardsParent.transform.localPosition.x > moveInDistance)
+        {
+            cardsParent.transform.position += Vector3.left * Time.deltaTime * 35;
+            if (cardsParent.transform.localPosition.x < moveInDistance)
+            {
+                cardsParent.transform.localPosition = new Vector3(moveInDistance, -1, 15);
+            }
+        }
     }
 
     [ContextMenu("TestItemSet")]

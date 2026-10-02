@@ -43,9 +43,12 @@ public class ItemManager : MonoBehaviour
     {
         foreach (Item item in items)
         {
-            item.SetTotalStats();
-            item.Timer();
-            item.CheckTimerAndEffect();
+            if (item != null)
+            {
+                item.SetTotalStats();
+                item.Timer();
+                item.CheckTimerAndEffect();
+            }
         }
         
         
@@ -64,14 +67,17 @@ public class ItemManager : MonoBehaviour
     /// <param name="item"></param>
     public void AddItem(Item item)
     {
-        if (!items.Contains(item))
+        if (item != null)
         {
-            items.Add(item);
-            item.stacks++;
-        }
-        else
-        {
-            item.stacks++;
+            if (!items.Contains(item))
+            {
+                items.Add(item);
+                item.stacks++;
+            }
+            else
+            {
+                item.stacks++;
+            }
         }
     }
 }

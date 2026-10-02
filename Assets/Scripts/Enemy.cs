@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    internal GameObject playerObj;
+    [SerializeField] internal int health;
+    [SerializeField] internal GameObject experience;
 
-    [SerializeField] int health;
-    [SerializeField] GameObject experience;
+    [SerializeField] internal float moveSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        FindPlayerInScene();
     }
 
     // Update is called once per frame
@@ -38,6 +40,19 @@ public class Enemy : MonoBehaviour
     {
 
     }
+    virtual internal void MoveTowards(Vector3 target)
+    {
+
+    }
+
+    internal void FindPlayerInScene()
+    {
+        if (playerObj  == null)
+        {
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
+
 
 
 }

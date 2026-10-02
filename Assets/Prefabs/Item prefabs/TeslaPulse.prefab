@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TeslaPulseItem
   Instance: {fileID: 0}
   cardType: 0
+  itemName: Tesla Pulse
   description: Damages nearby enemies with electrical pulses
   scalingInformation: Scales Range and Count
   icon: {fileID: -6863214963628513622, guid: 05aa7c7c947387c46b468b6fac5019fb, type: 3}
@@ -53,7 +54,7 @@ MonoBehaviour:
   duration: 0
   range: 2.5
   damage: 15
-  extraCooldown: 0
+  extraCooldown: 0.03
   extraDuration: 0
   extraRange: 0.75
   extraDamage: 0
