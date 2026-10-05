@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TeslaPulseItem : Item
 {
@@ -51,9 +52,11 @@ public class TeslaPulseItem : Item
 
         for (int i = 0; i < enemies.Count; i++)
         {
+            Debug.Log(enemies);
             GameObject currentBullet = ActivatePooledBullets();
             Bullet currentBulletScript = currentBullet.GetComponent<Bullet>();
-            currentBulletScript.BulletEffect(enemies[i]); // NEXT UP: Add values for startposition and endposition
+            Debug.Log($"Pulse n:{i}");
+            currentBulletScript.BulletEffect(enemies[i]);
         }
         
     }

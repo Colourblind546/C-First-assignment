@@ -65,7 +65,7 @@ public class ExpManager : MonoBehaviour
 
         // Prepares for next level up
         float expToLevelFloat = expToLevel;
-        expToLevel = Mathf.RoundToInt(expToLevelFloat * expIncreaseCoefficient/* * GameManager.levelDifficultyModifier*/);
+        expToLevel = Mathf.RoundToInt(expToLevelFloat * expIncreaseCoefficient);
         currentExp = 0;
     }
 
