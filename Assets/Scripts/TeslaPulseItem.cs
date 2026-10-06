@@ -42,7 +42,10 @@ public class TeslaPulseItem : Item
         List<GameObject> enemies = new List<GameObject>();
         foreach (Collider2D target in Physics2D.OverlapCircleAll(transform.position, totalRange, targetLayer))
         {
-            enemies.Add(target.gameObject);
+            if (!enemies.Contains(target.gameObject))
+            {
+                enemies.Add(target.gameObject);
+            }
         }
 
         if (enemies.Count > stacks)
@@ -55,8 +58,9 @@ public class TeslaPulseItem : Item
             Debug.Log(enemies);
             GameObject currentBullet = ActivatePooledBullets();
             Bullet currentBulletScript = currentBullet.GetComponent<Bullet>();
-            Debug.Log($"Pulse n:{i}");
+            Debug.Log($"Pulse n:{i}, enemy list length: {enemies.Count}");
             currentBulletScript.BulletEffect(enemies[i]);
+            continue;
         }
         
     }

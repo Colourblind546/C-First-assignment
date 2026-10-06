@@ -1,14 +1,15 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
 
-
-
-
     public static GameManager Instance;
+
+    GameObject playerObj;
+    PlayerHealthStuff playerHealth;
 
     private void Awake()
     {
@@ -26,7 +27,9 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerObj = FindPlayer();
+        playerHealth = playerObj.GetComponent<PlayerHealthStuff>();
+        StartCoroutine(WaveManager());
     }
 
     bool gameIsPaused = false;
@@ -53,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void SpawnWave(int wave)
+    void SpawnEnemyWave(int wave)
     {
         
     }
@@ -65,6 +68,32 @@ public class GameManager : MonoBehaviour
         Vector3 direction = Quaternion.Euler(0f, 0f, angle) * Vector3.right;
         output = direction * 25;
         return output;
+    }
+
+    IEnumerator WaveManager()
+    {
+        int wave = 0;
+
+        while (playerHealth.health != null)
+        {
+
+        }
+
+
+
+
+
+
+        yield return null; // To stop there from being a syntax error, remove later
+    }
+
+    /// <summary>
+    /// Returns the player GameObject in the scene
+    /// </summary>
+    /// <returns></returns>
+    GameObject FindPlayer()
+    {
+        return GameObject.FindGameObjectWithTag("Player");
     }
     
 }
