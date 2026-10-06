@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     GameObject playerObj;
-    PlayerHealthStuff playerHealth;
+    PlayerHealth playerHealth;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerObj = FindPlayer();
-        playerHealth = playerObj.GetComponent<PlayerHealthStuff>();
+        playerHealth = playerObj.GetComponent<PlayerHealth>();
         StartCoroutine(WaveManager());
     }
 
