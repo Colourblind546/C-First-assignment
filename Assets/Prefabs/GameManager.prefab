@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436767020c82b3440ac143992fe65937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  basicEnemy: {fileID: 4589352556626857049, guid: ab261696e386f4040be4178f34b00879, type: 3}
+  difficultyModifier: 1
+  remainingEnemies: []
+  waitForWave: 0

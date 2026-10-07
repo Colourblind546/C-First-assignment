@@ -15,4 +15,15 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health < 0)
+        {
+            // Do the die
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+    }
 }

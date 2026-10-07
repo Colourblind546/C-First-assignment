@@ -7,6 +7,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] internal GameObject experience;
 
     [SerializeField] internal float moveSpeed;
+
+    [SerializeField] internal int damage;
+    [SerializeField] internal float attackCooldown;
+    [SerializeField] internal float attackTimer;
+    [SerializeField] internal LayerMask playerLayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +37,7 @@ public class Enemy : MonoBehaviour
     public virtual void Die()
     {
         Instantiate(experience, transform.position, Quaternion.identity);
-
+        GameManager.Instance.GetComponent<GameManager>().remainingEnemies.Remove(gameObject);
         Destroy(gameObject);
     }
 
@@ -43,6 +48,18 @@ public class Enemy : MonoBehaviour
     virtual internal void MoveTowards(Vector3 target)
     {
 
+    }
+
+    internal virtual void Attack()
+    {
+        Collider2D playerCollider = Physics2D.OverlapBox(transform.position, Vector2.one, 0, playerLayer);
+        if (playerCollider != null)
+        {
+            GameObject playerObj = playerCollider.gameObject;
+            PlayerHealth playerHealth = playerObj.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damage);
+            attackTimer = 0;
+        }
     }
 
     internal void FindPlayerInScene()

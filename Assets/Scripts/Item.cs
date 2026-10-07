@@ -35,6 +35,13 @@ public class Item : MonoBehaviour
     [SerializeField] internal float totalDamage;
 
 
+    [Header("Stat limiters")]
+    [SerializeField] internal float minCooldown;
+    [SerializeField] internal float maxDuration;
+    [SerializeField] internal float maxRange;
+    [SerializeField] internal float maxDamage;
+
+
     [Header("Timer stuff")]
     [SerializeField] internal float time;
 
@@ -83,7 +90,31 @@ public class Item : MonoBehaviour
 
         if (totalCooldown <= 0)
         {
-            totalCooldown = 0.01f;
+            if (minCooldown != 0)
+            {
+                totalCooldown = minCooldown;
+            }
+        }
+        if (totalDuration > maxDuration)
+        {
+            if (maxDuration != 0)
+            {
+                totalDuration = maxDuration;
+            }
+        }
+        if (totalRange > maxRange)
+        {
+            if (maxRange != 0)
+            {
+                totalRange = maxRange;
+            }
+        }
+        if (totalDamage > maxDamage)
+        {
+            if (maxDamage != 0)
+            {
+                totalDamage = maxDamage;
+            }
         }
     }
     virtual public void ActivateEffect()

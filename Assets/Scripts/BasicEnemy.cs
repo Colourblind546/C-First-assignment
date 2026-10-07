@@ -1,3 +1,5 @@
+using System.Threading;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BasicEnemy : Enemy
@@ -12,6 +14,12 @@ public class BasicEnemy : Enemy
     void Update()
     {
         MoveTowards(playerObj.transform.position);
+
+        attackTimer += Time.deltaTime;
+        if (attackTimer > attackCooldown)
+        {
+            Attack();
+        }
     }
 
     Vector3 antiCollisionVector;
@@ -31,4 +39,6 @@ public class BasicEnemy : Enemy
     {
         transform.position += (target - transform.position).normalized * moveSpeed * Time.deltaTime;
     }
+
+    
 }

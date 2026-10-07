@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 81618596952673256}
   - component: {fileID: 3603253319135237835}
   - component: {fileID: 8063614162192308607}
+  - component: {fileID: 4645322181666164731}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -148,12 +149,25 @@ MonoBehaviour:
   expToLevel: 100
   expIncreaseCoefficient: 1.05
   unspentLevels: 3
-  expFindRadius: 2.5
+  expFindRadius: 5
   expPickupRadius: 0.5
   expPullSpeed: 25
   expLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4645322181666164731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050699582548669144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9cfecf3e37d474b9fe4cbbc4010f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  health: 100
 --- !u!1 &7113157284576863872
 GameObject:
   m_ObjectHideFlags: 0

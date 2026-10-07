@@ -4,7 +4,7 @@ public class ExpManager : MonoBehaviour
 {
     [Header("Experience Modifiers")]
     [SerializeField] int currentExp;
-    [SerializeField] int expToLevel;
+    [SerializeField] public int expToLevel;
     [SerializeField] float expIncreaseCoefficient;
     [SerializeField] public int unspentLevels = 0;
 
@@ -30,7 +30,12 @@ public class ExpManager : MonoBehaviour
     [SerializeField] LayerMask expLayer;
     void GetNearbyExp()
     {
-        Collider2D[] expColliders = Physics2D.OverlapCircleAll(transform.position, expFindRadius, expLayer);
+        float modifiedPickupRadius = Mathf.Clamp(expFindRadius + 0.10f * GameManager.Instance.wave, 5, 20);
+        if (GameManager.Instance.remainingEnemies.Count == 0)
+        {
+            modifiedPickupRadius = 10000;
+        }
+        Collider2D[] expColliders = Physics2D.OverlapCircleAll(transform.position, modifiedPickupRadius, expLayer);
         foreach (Collider2D collider in expColliders)
         {
             Experience exp = collider.gameObject.GetComponent<Experience>();
@@ -53,15 +58,16 @@ public class ExpManager : MonoBehaviour
     [ContextMenu("Level Up")]
     void LevelUp()
     {
+        PlayerHealth playerHealth = gameObject.GetComponent<PlayerHealth>();
+        playerHealth.health = 100;
         RandomiseAndAppearCards cardControllerObj = Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>();
         if (unspentLevels == 0)
         {
             cardControllerObj.SetAllCards();
         }
         unspentLevels++;
-        // Give player item options
 
-
+        GameManager.Instance.waitForWave = false;
 
         // Prepares for next level up
         float expToLevelFloat = expToLevel;

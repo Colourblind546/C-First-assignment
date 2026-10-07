@@ -2,6 +2,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     GameObject playerObj;
     PlayerHealth playerHealth;
+
+    [SerializeField] GameObject basicEnemy;
+
+    public float difficultyModifier;
 
     private void Awake()
     {
@@ -55,10 +61,21 @@ public class GameManager : MonoBehaviour
 
 
     }
-
+    
+    public List<GameObject> remainingEnemies = new List<GameObject>();
     void SpawnEnemyWave(int wave)
     {
+        remainingEnemies.Clear();
+        waitForWave = true;
+        float playerExpNeededForLevel = playerObj.GetComponent<ExpManager>().expToLevel;
+        float expValue = Mathf.CeilToInt(5f * difficultyModifier);
+        int enemySpawnAmount = Mathf.CeilToInt(playerExpNeededForLevel / expValue);
+        for (int i = 0; i < enemySpawnAmount; i++)
+        {
+            remainingEnemies.Add(Instantiate(basicEnemy, SpawnPosition(), quaternion.identity).gameObject);
+        }
         
+
     }
 
     Vector3 SpawnPosition()
@@ -66,16 +83,31 @@ public class GameManager : MonoBehaviour
         Vector3 output = Vector3.zero;
         float angle = UnityEngine.Random.Range(0f, 360f);
         Vector3 direction = Quaternion.Euler(0f, 0f, angle) * Vector3.right;
-        output = direction * 25;
+        output = direction * UnityEngine.Random.Range(25f, 55f) + playerObj.transform.position;
         return output;
     }
 
+
+    [SerializeField] public int wave = 0;
+    public bool waitForWave;
     IEnumerator WaveManager()
     {
-        int wave = 0;
+        waitForWave = false;
 
-        while (playerHealth.health != null)
+        Debug.Log("WHERE'RE THE FUCKIN' ENEMIES SHITHEAD!!!");
+
+        while (playerHealth.health != 0)
         {
+
+
+
+            SpawnEnemyWave(wave);
+
+            while (waitForWave)
+            {
+                yield return null;
+            }
+            wave++;
 
         }
 

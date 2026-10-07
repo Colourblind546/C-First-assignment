@@ -139,7 +139,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemy
   health: 350
   experience: {fileID: 2895668371736781817, guid: 3124b3bb35a00a645b3e193af6fecc7a, type: 3}
-  moveSpeed: 1
+  moveSpeed: 2
+  damage: 5
+  attackCooldown: 1
+  attackTimer: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!61 &8247359940287053322
 BoxCollider2D:
   m_ObjectHideFlags: 0

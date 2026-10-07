@@ -23,17 +23,19 @@ public class ItemManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(Instance.gameObject);
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
         allItems.Clear();
         GameObject[] allItemsInScene = GameObject.FindGameObjectsWithTag("Item");
         foreach (GameObject itemObj in allItemsInScene)
         {
             allItems.Add(itemObj.GetComponent<Item>());
         }
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
     }
 
     public GameObject TestObject;
