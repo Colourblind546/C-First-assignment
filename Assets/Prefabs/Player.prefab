@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df684ddc93a211b4c986959035541219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpManager
-  currentExp: 0
   expToLevel: 100
   expIncreaseCoefficient: 1.05
   unspentLevels: 3
@@ -168,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 100
+  maxHealth: 100
 --- !u!1 &7113157284576863872
 GameObject:
   m_ObjectHideFlags: 0

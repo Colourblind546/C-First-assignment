@@ -3,7 +3,7 @@ using UnityEngine;
 public class ExpManager : MonoBehaviour
 {
     [Header("Experience Modifiers")]
-    [SerializeField] int currentExp;
+    [SerializeField] public int currentExp {  get; private set; }
     [SerializeField] public int expToLevel;
     [SerializeField] float expIncreaseCoefficient;
     [SerializeField] public int unspentLevels = 0;
@@ -59,7 +59,7 @@ public class ExpManager : MonoBehaviour
     void LevelUp()
     {
         PlayerHealth playerHealth = gameObject.GetComponent<PlayerHealth>();
-        playerHealth.health = 100;
+        playerHealth.health = playerHealth.maxHealth;
         RandomiseAndAppearCards cardControllerObj = Camera.main.gameObject.GetComponent<RandomiseAndAppearCards>();
         if (unspentLevels == 0)
         {
