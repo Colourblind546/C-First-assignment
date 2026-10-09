@@ -260,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3145108675977065490, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
+  m_Sprite: {fileID: 5347624916351583486, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,20 +284,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteMeter
   meterState:
+  - moreThanPercentage: -100
+    sprite: {fileID: 5347624916351583486, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   - moreThanPercentage: 0
-    sprite: {fileID: -3145108675977065490, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
-  - moreThanPercentage: 3
-    sprite: {fileID: 8912935507086049796, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
+    sprite: {fileID: 1800149465648452115, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   - moreThanPercentage: 10
-    sprite: {fileID: 824770274568127295, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
-  - moreThanPercentage: 40
-    sprite: {fileID: -3178788516318135657, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
+    sprite: {fileID: -850607720666597602, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
+  - moreThanPercentage: 35
+    sprite: {fileID: 8861164391891251950, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   - moreThanPercentage: 65
-    sprite: {fileID: 4669033539429899302, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
-  - moreThanPercentage: 90
-    sprite: {fileID: 3348747849201507282, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
+    sprite: {fileID: 6805001858221448612, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
+  - moreThanPercentage: 85
+    sprite: {fileID: 6638760118575678636, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   - moreThanPercentage: 99
-    sprite: {fileID: 6934464223193977938, guid: 7c2cd76bd5863c34faa5c1c1ad4c22b9, type: 3}
+    sprite: {fileID: 5960549895126875910, guid: 048c1e803f1cdaf429f21dd6d187a105, type: 3}
   meterType: 1
 --- !u!1 &1622146335840508749
 GameObject:
