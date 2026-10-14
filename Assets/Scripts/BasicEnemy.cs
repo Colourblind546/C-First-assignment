@@ -8,6 +8,7 @@ public class BasicEnemy : Enemy
     void Start()
     {
         FindPlayerInScene();
+        SetModifiedValues();
     }
 
     // Update is called once per frame

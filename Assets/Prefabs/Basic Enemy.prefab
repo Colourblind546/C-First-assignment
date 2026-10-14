@@ -137,9 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a101868b9cceb5f4aa6ad091ab50acbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemy
-  health: 350
+  health: 250
+  healthScalingAfterWaveFive: 5
   experience: {fileID: 2895668371736781817, guid: 3124b3bb35a00a645b3e193af6fecc7a, type: 3}
-  moveSpeed: 2
+  moveSpeed: 3
   damage: 5
   attackCooldown: 1
   attackTimer: 0

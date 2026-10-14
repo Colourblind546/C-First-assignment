@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     GameObject playerObj;
     PlayerHealth playerHealth;
 
-    [SerializeField] GameObject basicEnemy;
+    [SerializeField] GameObject[] basicEnemy;
 
     public float difficultyModifier;
 
@@ -72,7 +72,8 @@ public class GameManager : MonoBehaviour
         int enemySpawnAmount = Mathf.CeilToInt(playerExpNeededForLevel / expValue);
         for (int i = 0; i < enemySpawnAmount; i++)
         {
-            remainingEnemies.Add(Instantiate(basicEnemy, SpawnPosition(), quaternion.identity).gameObject);
+            int enemyChoice = UnityEngine.Random.Range(0, basicEnemy.Length);
+            remainingEnemies.Add(Instantiate(basicEnemy[enemyChoice], SpawnPosition(), quaternion.identity).gameObject);
         }
         
 

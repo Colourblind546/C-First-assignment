@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
     internal GameObject playerObj;
     [SerializeField] internal int health;
+    [SerializeField] internal float healthScalingAfterWaveFive;
     [SerializeField] internal GameObject experience;
 
     [SerializeField] internal float moveSpeed;
@@ -16,6 +17,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         FindPlayerInScene();
+        int currentWave = GameManager.Instance.wave + 1;
+        if (GameManager.Instance.wave > 15)
+        {
+            health = health + Mathf.CeilToInt(healthScalingAfterWaveFive * (float)currentWave);
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +37,18 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    internal void SetModifiedValues()
+    {
+        int currentWave = GameManager.Instance.wave + 1;
+        if (GameManager.Instance.wave > 5)
+        {
+            health = health + Mathf.CeilToInt(healthScalingAfterWaveFive * (float)currentWave);
+        }
+        float randomUpOrDown = Random.Range(-0.1f, 0.1f);
+
+        moveSpeed *= 1.0f + randomUpOrDown;
     }
 
     [ContextMenu("Kill")]

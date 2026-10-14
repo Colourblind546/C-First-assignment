@@ -62,7 +62,7 @@ MonoBehaviour:
   totalDuration: 0
   totalRange: 0
   totalDamage: 0
-  minCooldown: 0.02
+  minCooldown: 0.035
   maxDuration: 0
   maxRange: 20
   maxDamage: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ClickDetection : MonoBehaviour
+public class CardClickDetection : MonoBehaviour
 {
 
     Collider2D buttonCollider;

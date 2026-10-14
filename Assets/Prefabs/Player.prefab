@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 100
   maxHealth: 100
+  deathScene: {fileID: 102900000, guid: 4b468ab7ba59c1140a2651d6874a45bf, type: 3}
 --- !u!1 &7113157284576863872
 GameObject:
   m_ObjectHideFlags: 0

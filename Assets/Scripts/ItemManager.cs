@@ -22,7 +22,6 @@ public class ItemManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(Instance.gameObject);
 
         allItems.Clear();
         GameObject[] allItemsInScene = GameObject.FindGameObjectsWithTag("Item");
