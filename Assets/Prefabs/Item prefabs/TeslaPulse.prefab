@@ -62,9 +62,9 @@ MonoBehaviour:
   totalDuration: 0
   totalRange: 0
   totalDamage: 0
-  minCooldown: 0.035
+  minCooldown: 0.1
   maxDuration: 0
-  maxRange: 20
+  maxRange: 10
   maxDamage: 0
   time: 0
   targetLayer:

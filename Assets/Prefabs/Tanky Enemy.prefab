@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemy
   health: 400
-  healthScalingAfterWaveFive: 8
+  healthScalingAfterWaveFive: 10
   experience: {fileID: 2895668371736781817, guid: 3124b3bb35a00a645b3e193af6fecc7a, type: 3}
   moveSpeed: 2
   damage: 5

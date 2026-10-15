@@ -88,7 +88,7 @@ public class Item : MonoBehaviour
         totalRange = range + extraRange * stacks;
         totalDamage = damage + extraDamage * stacks;
 
-        if (totalCooldown <= 0)
+        if (totalCooldown <= minCooldown)
         {
             if (minCooldown != 0)
             {
