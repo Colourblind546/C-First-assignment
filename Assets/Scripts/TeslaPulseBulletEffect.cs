@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class TeslaPulseBulletEffect : Bullet
 {
+
+    [SerializeField] float lifeTime;
+    float fadeAmount;
+    [SerializeField] Material material;
     LineRenderer line;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,8 +22,10 @@ public class TeslaPulseBulletEffect : Bullet
 
     internal override void BulletEffect(GameObject target)
     {
+        Debug.Log("Does zis work?");
         AppearTeslaPulseEffect(TeslaPulseItem.Instance.transform.position, target.transform.position);
         DoDamage(target);
+        
     }
 
     public void AppearTeslaPulseEffect(Vector2 startPosition, Vector2 endPosition) // SET UP OVERRIDES FOR BULLETEFFECT
@@ -35,7 +41,7 @@ public class TeslaPulseBulletEffect : Bullet
         CancelInvoke(nameof(DisappearTeslaPulseEffect));
         Invoke(nameof(DisappearTeslaPulseEffect), visualDuration);
     }
-    void DisappearTeslaPulseEffect()
+    internal void DisappearTeslaPulseEffect()
     {
         line.enabled = false;
     }

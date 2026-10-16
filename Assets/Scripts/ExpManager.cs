@@ -3,7 +3,7 @@ using UnityEngine;
 public class ExpManager : MonoBehaviour
 {
     [Header("Experience Modifiers")]
-    [SerializeField] public int currentExp /*{  get; set; }*/;
+    [SerializeField] public int currentExp {  get; private set; }
     [SerializeField] public int expToLevel;
     [SerializeField] float expIncreaseCoefficient;
     [SerializeField] public int unspentLevels = 0;

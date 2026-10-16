@@ -83,10 +83,10 @@ public class Item : MonoBehaviour
     }
     internal void SetTotalStats()
     {
-        totalCooldown = cooldown - extraCooldown * (stacks - 1);
-        totalDuration = duration + extraDuration * (stacks - 1);
-        totalRange = range + extraRange * (stacks - 1);
-        totalDamage = damage + extraDamage * (stacks - 1);
+        totalCooldown = cooldown - extraCooldown * stacks;
+        totalDuration = duration + extraDuration * stacks;
+        totalRange = range + extraRange * stacks;
+        totalDamage = damage + extraDamage * stacks;
 
         if (totalCooldown <= minCooldown)
         {
