@@ -10,19 +10,21 @@ public class ShowScore : MonoBehaviour
     {
         textField = GetComponent<TMP_Text>();
         textField.text = $"Waves cleared: {GameManager.Instance.wave}";
+        int highScore;
+        int score = GameManager.Instance.wave;
         if (PlayerPrefs.HasKey("WavesClearedHighScore"))
         {
-            if (GameManager.Instance.wave > PlayerPrefs.GetInt("WavesClearedHighScore"))
-            {
-                PlayerPrefs.SetInt("WavesClearedHighScore", GameManager.Instance.wave);
-            }
+            highScore = PlayerPrefs.GetInt("WavesClearedHighScore");
+        }
+        else
+        {
+            highScore = 0;
+        }
+
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("WavesClearedHighScore", score);
         }
         Destroy(GameManager.Instance);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

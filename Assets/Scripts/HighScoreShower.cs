@@ -9,15 +9,18 @@ public class HighScoreShower : MonoBehaviour
     void Start()
     {
         textField = GetComponent<TMP_Text>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        int highScore;
         if (PlayerPrefs.HasKey("WavesClearedHighScore"))
         {
-            textField.text = $"Most waves cleared: {PlayerPrefs.GetInt("WavesClearedHighScore")}";
+            highScore = PlayerPrefs.GetInt("WavesClearedHighScore");
         }
+        else
+        {
+            highScore = 0;
+        }
+        textField.text = $"Most waves cleared: {highScore}";
+
     }
 
 
