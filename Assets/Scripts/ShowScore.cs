@@ -10,6 +10,13 @@ public class ShowScore : MonoBehaviour
     {
         textField = GetComponent<TMP_Text>();
         textField.text = $"Waves cleared: {GameManager.Instance.wave}";
+        if (PlayerPrefs.HasKey("WavesClearedHighScore"))
+        {
+            if (GameManager.Instance.wave > PlayerPrefs.GetInt("WavesClearedHighScore"))
+            {
+                PlayerPrefs.SetInt("WavesClearedHighScore", GameManager.Instance.wave);
+            }
+        }
         Destroy(GameManager.Instance);
     }
 
