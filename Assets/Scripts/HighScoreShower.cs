@@ -20,7 +20,6 @@ public class HighScoreShower : MonoBehaviour
             highScore = 0;
         }
         textField.text = $"Most waves cleared: {highScore}";
-
     }
 
 
