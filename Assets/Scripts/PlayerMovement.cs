@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         if (movementAction != null)
         {
             move = movementAction.action.ReadValue<Vector2>(); // FIX THIS!! IT'S NOT READING THE INPUTS AND IS OUTPUTTING 0!!! I'M GONNA BLOW MY BRAINS OUT, WITH THE LEMONS!!!
-            Debug.Log(modifiedMove);
         }
 
         modifiedMove = move * Time.deltaTime * moveSpeed;

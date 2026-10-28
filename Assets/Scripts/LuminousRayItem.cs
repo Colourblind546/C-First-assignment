@@ -32,16 +32,18 @@ public class LuminousRayItem : Item
             PoolBullets(1);
         }
     }
-
+    public GameObject debugBox;
     public override void ActivateEffect()
     {
         Debug.Log("IS THIS WORKING?!!");
         time = 0;
-        GameObject target = Physics2D.OverlapCircle(transform.position, totalRange, targetLayer).gameObject;
-        Vector3 overlapCentre = (target.transform.position - transform.position).normalized * totalRange;
-        float overlapRotation = Mathf.Rad2Deg * Mathf.Atan(overlapCentre.y / overlapCentre.x);
+        GameObject target = Physics2D.OverlapCircle(transform.position, 15f, targetLayer).gameObject;
+        Vector3 overlapCentreOffset = (target.transform.position - transform.position).normalized * totalRange;
+        float overlapRotation = Mathf.Rad2Deg * Mathf.Atan(overlapCentreOffset.y / overlapCentreOffset.x);
+        Debug.Log("Rotation: " + overlapRotation);
+        Debug.Log("Position: " + overlapCentreOffset);
 
-        Collider2D[] enemiesHit = Physics2D.OverlapBoxAll(overlapCentre, new Vector2(totalRange * 2, 0.5f), overlapRotation, targetLayer);
+        Collider2D[] enemiesHit = Physics2D.OverlapBoxAll(overlapCentreOffset + transform.position, new Vector2(totalRange * 2, 0.5f), overlapRotation, targetLayer);
         foreach (Collider2D enemyCollider in enemiesHit)
         {
             GameObject enemyObj = enemyCollider.gameObject;
@@ -51,7 +53,7 @@ public class LuminousRayItem : Item
 
         GameObject currentBullet = ActivatePooledBullets();
         LuminousRayBullet currentBulletScript = currentBullet.GetComponent<LuminousRayBullet>();
-        currentBulletScript.AppearLightRayEffect(transform.position, overlapCentre * 2);
+        currentBulletScript.AppearLightRayEffect(transform.position, overlapCentreOffset * 2 + transform.position);
 
     }
 }

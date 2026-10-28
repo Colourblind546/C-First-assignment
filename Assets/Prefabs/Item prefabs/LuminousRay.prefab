@@ -73,3 +73,4 @@ MonoBehaviour:
   stacks: 0
   bullet: []
   bulletObj: {fileID: 6115003756279531873, guid: 8b7b9fc9dc246d541a289d0a649104e0, type: 3}
+  debugBox: {fileID: 0}
