@@ -1,7 +1,5 @@
 using System;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +8,7 @@ public class MenuClickDetection : MonoBehaviour
 
     Collider2D buttonCollider;
     [SerializeField] LayerMask buttonLayer;
-    [SerializeField] SceneAsset scene;
+    [SerializeField] string scene;
     Vector3 baseSize;
 
     
@@ -31,7 +29,7 @@ public class MenuClickDetection : MonoBehaviour
             gameObject.transform.localScale = baseSize * 1.2f;
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
-                SceneManager.LoadScene(scene.name);
+                SceneManager.LoadScene(scene);
             }
         }
         else

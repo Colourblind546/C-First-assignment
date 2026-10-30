@@ -2,7 +2,6 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using NUnit.Framework;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour

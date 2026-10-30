@@ -129,8 +129,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1969682357408870105, guid: 5d54965ccc51c234697b851b0d3e3b02, type: 3}
       propertyPath: scene
-      value: 
-      objectReference: {fileID: 102900000, guid: 0777c106e500ab0419653820ac3a94aa, type: 3}
+      value: Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2339678269469645224, guid: 5d54965ccc51c234697b851b0d3e3b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5
@@ -348,6 +348,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1543680385
 MonoBehaviour:
@@ -390,8 +391,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1969682357408870105, guid: 5d54965ccc51c234697b851b0d3e3b02, type: 3}
       propertyPath: scene
-      value: 
-      objectReference: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+      value: WorkScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2339678269469645224, guid: 5d54965ccc51c234697b851b0d3e3b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
@@ -621,6 +622,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &2090756887
 RectTransform:

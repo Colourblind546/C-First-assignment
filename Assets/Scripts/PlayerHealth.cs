@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
@@ -8,7 +7,6 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int maxHealth;
 
-    [SerializeField] SceneAsset deathScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if (health < 0)
         {
-            SceneManager.LoadScene(deathScene.name);
+            SceneManager.LoadScene("Death Scene");
             // Do the die
             //Application.Quit();
             //UnityEditor.EditorApplication.isPlaying = false;
