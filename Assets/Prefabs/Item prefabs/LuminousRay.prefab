@@ -57,7 +57,7 @@ MonoBehaviour:
   extraCooldown: 0.2
   extraDuration: 0
   extraRange: 0
-  extraDamage: 25
+  extraDamage: 55
   totalCooldown: 0
   totalDuration: 0
   totalRange: 0
