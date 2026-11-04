@@ -50,19 +50,19 @@ MonoBehaviour:
   description: Fire a powerful ray of light, damaging all enemies in its path
   scalingInformation: Damage and Attack Speed
   icon: {fileID: 283035266516732576, guid: d6cfd58a47e0faa4488cf3d2088be605, type: 3}
-  cooldown: 3
+  cooldown: 2.5
   duration: 0
   range: 100
   damage: 200
-  extraCooldown: 0.2
+  extraCooldown: 0.1
   extraDuration: 0
   extraRange: 0
-  extraDamage: 55
+  extraDamage: 70
   totalCooldown: 0
   totalDuration: 0
   totalRange: 0
   totalDamage: 0
-  minCooldown: 1.5
+  minCooldown: 0.4
   maxDuration: 0
   maxRange: 0
   maxDamage: 0

@@ -19,7 +19,7 @@ public class TRayItem : Item
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        time = cooldown;
     }
 
     // Update is called once per frame
@@ -30,12 +30,30 @@ public class TRayItem : Item
             PoolBullets(1);
         }
     }
+
+    override internal void CheckTimerAndEffect()
+    {
+        if (time > totalCooldown)
+        {
+            if (Physics2D.OverlapCircle(transform.position, totalRange, targetLayer))
+            {
+                ActivateEffect();
+                time = 0;
+            }
+        }
+    }
+
     public GameObject debugBox;
     public override void ActivateEffect()
     {
         Debug.Log("IS THIS WORKING?!!");
         time = 0;
-        GameObject target = Physics2D.OverlapCircle(transform.position, totalRange, targetLayer).gameObject;
+        Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, totalRange, targetLayer);
+        GameObject target = null;
+        if (targetCollider != null)
+        {
+            target = targetCollider.gameObject;
+        }
         Vector3 overlapCentreOffset = (target.transform.position - transform.position).normalized * totalRange;
         float overlapRotation = Mathf.Rad2Deg * Mathf.Atan(overlapCentreOffset.y / overlapCentreOffset.x);
         Debug.Log("Rotation: " + overlapRotation);
@@ -51,6 +69,7 @@ public class TRayItem : Item
 
         GameObject currentBullet = ActivatePooledBullets();
         LuminousRayBullet currentBulletScript = currentBullet.GetComponent<LuminousRayBullet>();
+        currentBulletScript.AppearLightRayEffect(transform.position, overlapCentreOffset * 2 + transform.position);
         currentBulletScript.AppearLightRayEffect(transform.position, overlapCentreOffset * 2 + transform.position);
 
     }

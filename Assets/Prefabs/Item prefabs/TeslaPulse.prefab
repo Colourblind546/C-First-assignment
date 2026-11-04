@@ -53,11 +53,11 @@ MonoBehaviour:
   cooldown: 1
   duration: 0
   range: 4
-  damage: 15
+  damage: 55
   extraCooldown: 0.03
   extraDuration: 0
   extraRange: 0.2
-  extraDamage: 0
+  extraDamage: 0.85
   totalCooldown: 0
   totalDuration: 0
   totalRange: 0

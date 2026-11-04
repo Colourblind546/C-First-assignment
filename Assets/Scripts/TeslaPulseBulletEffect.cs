@@ -14,11 +14,13 @@ public class TeslaPulseBulletEffect : Bullet
     // Update is called once per frame
     void Update()
     {
+
     }
 
     internal override void BulletEffect(GameObject target)
     {
         AppearTeslaPulseEffect(TeslaPulseItem.Instance.transform.position, target.transform.position);
+        damage = Mathf.CeilToInt(TeslaPulseItem.Instance.totalDamage);
         DoDamage(target);
     }
 

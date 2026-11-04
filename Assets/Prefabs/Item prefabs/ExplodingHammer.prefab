@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8936919103371387551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2827347798882736079}
+  - component: {fileID: -4092643920839719597}
+  m_Layer: 0
+  m_Name: ExplodingHammer
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2827347798882736079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936919103371387551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4092643920839719597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936919103371387551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cbc9f2dfc7fcc49929c97029e894af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Instance: {fileID: 0}
+  cardType: 0
+  itemName: Exploding Hammer
+  description: Throw an exploding hammer
+  scalingInformation: Radius and Damage
+  icon: {fileID: -949428262283701874, guid: b0d0e69bcb66c0f4d84d7d47332f851c, type: 3}
+  cooldown: 1.5
+  duration: 0
+  range: 1.75
+  damage: 50
+  extraCooldown: 0.075
+  extraDuration: 0
+  extraRange: 0.15
+  extraDamage: 20
+  totalCooldown: 0
+  totalDuration: 0
+  totalRange: 0
+  totalDamage: 0
+  minCooldown: 1
+  maxDuration: 0
+  maxRange: 0
+  maxDamage: 0
+  time: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stacks: 0
+  bullet: []
+  bulletObj: {fileID: 1598503575488200840, guid: 5fb046c104c338b418347436d36f5f40, type: 3}

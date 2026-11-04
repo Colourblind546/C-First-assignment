@@ -4,7 +4,9 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField] internal LayerMask targetLayer;
-    [SerializeField] internal int damage;
+    [SerializeField] public int damage;
+    [SerializeField] public float speed;
+    [SerializeField] public Vector2 direction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
