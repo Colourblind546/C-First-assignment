@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1197031273388601064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66582751073967397}
+  - component: {fileID: -5771071024180193946}
+  m_Layer: 0
+  m_Name: GayRay
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66582751073967397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197031273388601064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5771071024180193946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197031273388601064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277720d84e511024dbe44759355646b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Instance: {fileID: 0}
+  cardType: 0
+  itemName: GayRay
+  description: Unleash a colourful beam that sweeps the area disintegrating anything
+    in its path
+  scalingInformation: Scales Damage
+  icon: {fileID: -5857672860101907002, guid: fc24d561344556c4b9956fc040f92699, type: 3}
+  cooldown: 7.5
+  duration: 2
+  range: 75
+  damage: 2
+  extraCooldown: 0.2
+  extraDuration: 0.2
+  extraRange: 0
+  extraDamage: 2
+  totalCooldown: 0
+  totalDuration: 0
+  totalRange: 0
+  totalDamage: 0
+  minCooldown: 5
+  maxDuration: 4.5
+  maxRange: 0
+  maxDamage: 0
+  time: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stacks: 0
+  bullet: []
+  bulletObj: {fileID: 5624845847920267952, guid: 52076334227737741ae52e1a37366279, type: 3}
+  ticksPerSecond: 10

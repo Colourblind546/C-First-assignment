@@ -7,6 +7,7 @@ public class CardStats : MonoBehaviour
     
     [SerializeField] TMP_Text description;
     [SerializeField] TMP_Text stats;
+    [SerializeField] TMP_Text stacks;
     [SerializeField] GameObject card;
     [SerializeField] SpriteRenderer icon;
     public Item cardItem;
@@ -35,8 +36,16 @@ public class CardStats : MonoBehaviour
         stats.text = item.scalingInformation;
         icon.sprite = item.icon;
         cardItem = item;
+        if (item.stacks != 0)
+        {
+            stacks.text = $"({item.stacks})";
+        }
+        else
+        {
+            stacks.text = "";
+        }
 
-        card.GetComponent<CardChanger>().SetCard(cardType);
+            card.GetComponent<CardChanger>().SetCard(cardType);
 
     }
 }

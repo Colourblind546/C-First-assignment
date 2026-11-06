@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] internal float attackCooldown;
     [SerializeField] internal float attackTimer;
     [SerializeField] internal LayerMask playerLayer;
+
+    [SerializeField] internal SpriteRenderer sprite;
+    [SerializeField] internal Color normalColor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +37,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        FlashRed();
+
         if (health <= 0)
         {
             Die();
@@ -66,6 +73,17 @@ public class Enemy : MonoBehaviour
     virtual internal void MoveTowards(Vector3 target)
     {
 
+    }
+
+    void FlashRed()
+    {
+        sprite.color = Color.red;
+        CancelInvoke(nameof(ColorReset));
+        Invoke(nameof(ColorReset), 0.1f);
+    }
+    void ColorReset()
+    {
+        sprite.color = normalColor;
     }
 
     internal virtual void Attack()

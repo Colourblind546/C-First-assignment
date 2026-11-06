@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BasicEnemy : Enemy
 {
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        normalColor = sprite.color;
         FindPlayerInScene();
         SetModifiedValues();
     }
@@ -40,6 +42,7 @@ public class BasicEnemy : Enemy
     {
         transform.position += (target - transform.position).normalized * moveSpeed * Time.deltaTime;
     }
+    
 
     
 }

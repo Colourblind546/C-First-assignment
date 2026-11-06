@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.37419224, a: 1}
+  m_Color: {r: 1, g: 0.3160377, b: 0.68349993, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  sprite: {fileID: 6936569764434822265}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &8247359940287053322
 BoxCollider2D:
   m_ObjectHideFlags: 0
